@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+<div class="card p-4 shadow">
+
+<h3>Contact Details</h3>
+
+<hr>
+
+<p><b>Name :</b> {{data.name}}</p>
+
+<p><b>Email :</b> {{data.email}}</p>
+
+<p><b>Subject :</b> {{data.subject}}</p>
+
+<p><b>Message :</b> {{data.message}}</p>
+
+<a href="{% url 'dashboard' %}" class="btn btn-primary">
+Back
+</a>
+
+</div>
+
+</div>
+
+{% endblock %}

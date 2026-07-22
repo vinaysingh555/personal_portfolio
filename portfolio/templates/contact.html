@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+
+<section class="container py-5">
+
+    <div class="text-center mb-5">
+        <h1 class="fw-bold">Contact Me</h1>
+        <p class="text-muted">Feel free to contact me for freelance work, internships, or collaborations.</p>
+    </div>
+
+    <div class="row">
+
+        <!-- Contact Details -->
+        <div class="col-lg-5 mb-4">
+
+            <div class="card shadow-lg border-0 rounded-4 p-4">
+
+                <h3 class="mb-4 text-primary">Get In Touch</h3>
+
+                <p>
+                    <strong>Name:</strong><br>
+                    Vinay Pratap Singh
+                </p>
+
+                <p>
+                    <strong>Mobile:</strong><br>
+                    <a href="tel:+917976617035">+91 7976617035</a>
+                </p>
+
+                <p>
+                    <strong>Email:</strong><br>
+                    <a href="mailto:vinaysinghh7976@gmail.com">
+                        vinaysinghh7976@gmail.com
+                    </a>
+                </p>
+
+                <p>
+                    <strong>Location:</strong><br>
+                    Jaipur, Rajasthan, India
+                </p>
+
+                <hr>
+
+                <h5>Connect With Me</h5>
+
+                <a href="https://github.com/vinaysingh555" class="btn btn-dark m-1">GitHub</a>
+                <a href="https://www.linkedin.com/in/vinay-pratap-singh-519466302" class="btn btn-primary m-1">LinkedIn</a>
+                <a href="https://instagram.com/username" class="btn btn-danger m-1">Instagram</a>
+
+            </div>
+
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-lg-7">
+
+            <div class="card shadow-lg border-0 rounded-4 p-4">
+
+                <h3 class="mb-4 text-primary">Send a Message</h3>
+
+               <form method="POST">
+                 {% csrf_token %}
+
+                    <div class="mb-3">
+                        <input type="text" name="name" class="form-control" placeholder="Your Name">
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="email"  name="email" class="form-control" placeholder="Your Email">
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="subject" placeholder="Subject">
+                    </div>
+
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="6" name="message" placeholder="Write your message..."></textarea>
+                    </div>
+
+                    <button class="btn btn-primary btn-lg w-100">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

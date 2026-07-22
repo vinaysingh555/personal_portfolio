@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}About Me{% endblock %}
+
+{% block content %}
+
+<section class="container py-5">
+
+    <div class="row align-items-center">
+
+        <div class="col-md-5 text-center">
+
+            <img src="/static/images/profile.jpeg"
+                 class="img-fluid rounded-circle shadow"
+                 width="350"
+                 alt="Profile">
+
+        </div>
+
+        <div class="col-md-7">
+
+            <h1 class="fw-bold text-primary">About Me</h1>
+
+            <p class="mt-4">
+                Hello! My name is <b>Vinay Pratap Singh</b>. I am a passionate
+                Python Django Developer from Jaipur, Rajasthan. I enjoy creating
+                modern, responsive and user-friendly websites using Python,
+                Django, HTML, CSS, Bootstrap and JavaScript.
+            </p>
+
+            <p>
+                I love learning new technologies and continuously improving my
+                programming skills. My goal is to become a Full Stack Python
+                Developer and build high-quality web applications.
+            </p>
+
+            <hr>
+
+            <div class="row">
+
+                <div class="col-sm-6">
+
+                    <p><strong>Name :</strong> Vinay Pratap Singh</p>
+
+                    <p><strong>City :</strong> Jaipur</p>
+
+                    <p><strong>Country :</strong> India</p>
+
+                    <p><strong>Email :</strong> vinaysinghh7976@gmail.com</p>
+
+                </div>
+
+                <div class="col-sm-6">
+
+                    <p><strong>Phone :</strong> +91 7976617035</p>
+
+                    <p><strong>Qualification :</strong> BCA Student</p>
+
+                    <p><strong>Skills :</strong> Python, Django</p>
+
+                    <p><strong>Experience :</strong> Fresher</p>
+
+                </div>
+
+            </div>
+
+            <a href="/contact/" class="btn btn-primary mt-3">
+                Contact Me
+            </a>
+
+            <a href="/resume/" class="btn btn-outline-dark mt-3 ms-2">
+                Download Resume
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body{
+            background:#111827;
+            color:white;
+        }
+
+        .navbar{
+            background:#0f172a;
+        }
+
+        .navbar-brand{
+            font-weight:bold;
+            font-size:28px;
+        }
+
+        .nav-link{
+            color:white !important;
+            margin-left:15px;
+        }
+
+        .hero{
+            height:90vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+        }
+
+        .hero h1{
+            font-size:60px;
+            font-weight:bold;
+        }
+
+        .hero span{
+            color:#38bdf8;
+        }
+
+        footer{
+            background:#0f172a;
+            padding:20px;
+            text-align:center;
+            margin-top:50px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="container">
+
+<a class="navbar-brand" href="/">Portfolio</a>
+
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+<li class="nav-item"><a class="nav-link" href="/skills/">Skills</a></li>
+<li class="nav-item"><a class="nav-link" href="/resume/">Resume</a></li>
+<li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+
+</ul>
+
+</div>
+
+</div>
+</nav>
+
+<div class="container mt-4">
+{% block content %}
+{% endblock %}
+</div>
+
+<footer>
+© 2026 Personal Portfolio | Developed with Django
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

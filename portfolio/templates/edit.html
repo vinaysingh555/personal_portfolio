@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+<div class="card shadow p-4">
+
+<h2 class="mb-4">Edit Contact</h2>
+
+<form method="POST">
+
+{% csrf_token %}
+
+<input type="text"
+name="name"
+value="{{data.name}}"
+class="form-control mb-3">
+
+<input type="email"
+name="email"
+value="{{data.email}}"
+class="form-control mb-3">
+
+<input type="text"
+name="subject"
+value="{{data.subject}}"
+class="form-control mb-3">
+
+<textarea
+name="message"
+class="form-control mb-3"
+rows="5">{{data.message}}</textarea>
+
+<button class="btn btn-success">
+Update
+</button>
+
+<a href="{% url 'dashboard' %}" class="btn btn-secondary">
+Cancel
+</a>
+
+</form>
+
+</div>
+
+</div>
+
+{% endblock %}
