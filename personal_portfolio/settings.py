@@ -29,12 +29,20 @@ DEBUG = True
 
 
 # Application definition
-STATIC_URL = 'static/'
+# STATIC_URL = 'static/'
+#
+# STATICFILES_DIRS = [
+#     BASE_DIR / "portfolio/static",
+# ]
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "portfolio/static",
+    BASE_DIR / "portfolio" / "static",
 ]
 
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 INSTALLED_APPS = [
     'portfolio',
     'django.contrib.admin',

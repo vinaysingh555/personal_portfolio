@@ -3,6 +3,7 @@
 {% block title %}About Me{% endblock %}
 
 {% block content %}
+ {% load static %}
 
 <section class="container py-5">
 
@@ -10,10 +11,12 @@
 
         <div class="col-md-5 text-center">
 
-            <img src="/static/images/profile.jpeg"
-                 class="img-fluid rounded-circle shadow"
-                 width="350"
-                 alt="Profile">
+
+
+<img src="{% static 'images/profile.jpeg' %}"
+     class="img-fluid rounded-circle shadow"
+     width="350"
+     alt="Profile">
 
         </div>
 
