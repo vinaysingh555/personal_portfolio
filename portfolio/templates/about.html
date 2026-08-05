@@ -1,85 +1,172 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title %}About Me{% endblock %}
+{% block title %}About{% endblock %}
 
 {% block content %}
 
-<section class="container py-5">
+<section class="about-section">
 
-    <div class="row align-items-center">
+<div class="container">
 
-        <div class="col-md-5 text-center">
+<div class="row align-items-center">
 
+<!-- LEFT -->
 
-{% load static %}
+<div class="col-lg-5 text-center">
 
-<img src="{% static 'images/profile.jpeg' %}"
-     class="img-fluid rounded-circle shadow"
-     width="350"
-     alt="Profile">
+<div class="about-img">
 
-        </div>
+<img src="{% static 'images/profile.jpeg' %}" alt="Vinay Pratap Singh">
 
-        <div class="col-md-7">
+<div class="glow"></div>
 
-            <h1 class="fw-bold text-primary">About Me</h1>
+</div>
 
-            <p class="mt-4">
-                Hello! My name is <b>Vinay Pratap Singh</b>. I am a passionate
-                Python Django Developer from Jaipur, Rajasthan. I enjoy creating
-                modern, responsive and user-friendly websites using Python,
-                Django, HTML, CSS, Bootstrap and JavaScript.
-            </p>
+</div>
 
-            <p>
-                I love learning new technologies and continuously improving my
-                programming skills. My goal is to become a Full Stack Python
-                Developer and build high-quality web applications.
-            </p>
+<!-- RIGHT -->
 
-            <hr>
+<div class="col-lg-7">
 
-            <div class="row">
+<p class="section-title">
+ABOUT ME
+</p>
 
-                <div class="col-sm-6">
+<h1>
+Hi, I'm
+<span>Vinay Pratap Singh</span>
+</h1>
 
-                    <p><strong>Name :</strong> Vinay Pratap Singh</p>
+<h3>
+Python Developer | AI Developer
+</h3>
 
-                    <p><strong>City :</strong> Jaipur</p>
+<p class="about-text">
 
-                    <p><strong>Country :</strong> India</p>
+I am a passionate Python Developer with a strong interest in
+Artificial Intelligence, Generative AI and Full Stack Development.
 
-                    <p><strong>Email :</strong> vinaysinghh7976@gmail.com</p>
+I enjoy building modern, responsive and scalable web applications
+using Python, Django, HTML, CSS, Bootstrap, JavaScript and MySQL.
 
-                </div>
+</p>
 
-                <div class="col-sm-6">
+<p class="about-text">
 
-                    <p><strong>Phone :</strong> +91 7976617035</p>
+My goal is to become a professional AI Engineer and Full Stack
+Developer by continuously learning new technologies and creating
+real-world projects.
 
-                    <p><strong>Phone :</strong> +91 7568373846</p>
+</p>
 
-                    <p><strong>Qualification :</strong> BCA Student</p>
+<div class="info-box">
 
-                    <p><strong>Skills :</strong> Python, Django</p>
+<div>
 
-                    <p><strong>Experience :</strong> Fresher</p>
+<strong>Name</strong>
 
-                </div>
+<p>Vinay Pratap Singh</p>
 
-            </div>
+</div>
 
-            <a href="/contact/" class="btn btn-primary mt-3">
-                Contact Me
-            </a>
+<div>
 
-            <a href="/static/images/vinaypratapresume.pdf" class="btn btn-outline-dark mt-3 ms-2">
-                Download Resume
-            </a>
+<strong>Email</strong>
 
-        </div>
+<p>vinaysinghh7976@gmail.com</p>
 
-    </div>
+</div>
+
+<div>
+
+<strong>Location</strong>
+
+<p>Jaipur, Rajasthan</p>
+
+</div>
+
+<div>
+
+<strong>Education</strong>
+
+<p>BCA Student</p>
+
+</div>
+
+</div>
+
+<div class="skills">
+
+<span>Python</span>
+
+<span>Django</span>
+
+<span>AI</span>
+
+<span>Generative AI</span>
+
+<span>Bootstrap</span>
+
+<span>JavaScript</span>
+
+<span>MySQL</span>
+
+</div>
+
+<div class="buttons">
+
+<a href="/contact/" class="btn btn-info">
+Hire Me
+</a>
+
+<a href="/resume/" class="btn btn-outline-light">
+Download CV
+</a>
+
+</div>
+
+<div class="counter">
+
+<div>
+
+<h2>10+</h2>
+
+<p>Projects</p>
+
+</div>
+
+<div>
+
+<h2>10+</h2>
+
+<p>Skills</p>
+
+</div>
+
+<div>
+
+<h2>1+</h2>
+
+<p>Experience</p>
+
+</div>
+
+<div>
+
+<h2>100%</h2>
+
+<p>Dedication</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 

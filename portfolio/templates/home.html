@@ -1,26 +1,155 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
-<div class="hero">
+<section class="hero">
 
-<div>
+<div class="container">
 
-<h1>Hello, I'm <span>Vinay Pratap singh</span></h1>
+<div class="row align-items-center">
 
-<h3>Python Django Developer</h3>
+<!-- Left -->
 
-<p>
-I build modern, responsive and scalable web applications using
-Python, Django, HTML, CSS, Bootstrap and JavaScript.
+<div class="col-lg-6">
+
+<p class="hero-top">
+👋 Welcome to my Portfolio
 </p>
 
-<a href="/contact/" class="btn btn-info btn-lg mt-3">
+<h1>
+Hi, I'm
+<br>
+<span>Vinay Pratap Singh</span>
+</h1>
+
+<h2 id="typing"></h2>
+
+<p class="hero-text">
+
+Passionate Python, Django and AI Developer dedicated to building modern,
+responsive and intelligent web applications.
+
+Currently exploring Artificial Intelligence, Generative AI,
+Machine Learning and Full Stack Development.
+
+</p>
+
+<div class="mt-4">
+
+<a href="/contact/" class="btn btn-info btn-lg me-3">
 Hire Me
+</a>
+
+<a href="/resume/" class="btn btn-outline-light btn-lg">
+Download CV
+</a>
+
+</div>
+
+<div class="hero-icons mt-5">
+
+<a href="https://github.com/vinaysingh555">
+<i class="fa-brands fa-github"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/vinay-pratap-singh-519466302">
+<i class="fa-brands fa-linkedin"></i>
+</a>
+
+<a href="mailto:vinaysinghh7976@gmail.com">
+<i class="fa-solid fa-envelope"></i>
 </a>
 
 </div>
 
 </div>
+
+<!-- Right -->
+
+<div class="col-lg-6 text-center">
+
+<div class="image-box">
+
+<img src="{% static 'images/profile.jpeg' %}"
+class="img-fluid profile-img">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+const roles=[
+
+"Python Developer",
+
+"AI Developer",
+
+"Web Developer",
+
+"Django Developer",
+
+"Generative AI Enthusiast"
+
+];
+
+let role=0;
+let letter=0;
+let deleting=false;
+
+function typing(){
+
+let current=roles[role];
+
+if(!deleting){
+
+document.getElementById("typing").innerHTML=current.substring(0,letter++)+"|";
+
+if(letter>current.length){
+
+deleting=true;
+
+setTimeout(typing,1500);
+
+return;
+
+}
+
+}
+
+else{
+
+document.getElementById("typing").innerHTML=current.substring(0,letter--)+"|";
+
+if(letter==0){
+
+deleting=false;
+
+role++;
+
+if(role>=roles.length){
+
+role=0;
+
+}
+
+}
+
+}
+
+setTimeout(typing,deleting?50:120);
+
+}
+
+typing();
+
+</script>
 
 {% endblock %}

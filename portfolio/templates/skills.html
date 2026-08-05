@@ -4,110 +4,144 @@
 
 {% block content %}
 
+<style>
+    .skill-card{
+        border: none;
+        border-radius: 18px;
+        transition: all .3s ease;
+        box-shadow: 0 10px 25px rgba(0,0,0,.08);
+        height: 100%;
+    }
+
+    .skill-card:hover{
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,.15);
+    }
+
+    .skill-icon{
+        font-size:55px;
+        margin-bottom:20px;
+    }
+</style>
+
 <section class="container py-5">
 
     <div class="text-center mb-5">
         <h1 class="fw-bold text-primary">My Skills</h1>
-        <p>I love building websites using modern technologies.</p>
+        <p class="text-muted">
+            Technologies and tools I use to build modern websites and AI-powered applications.
+        </p>
     </div>
 
-    <div class="row">
+    <div class="row g-4">
 
-        <div class="col-md-6">
-
-            <h5>Python</h5>
-            <div class="progress mb-4" style="height:25px;">
-                <div class="progress-bar bg-primary" style="width:90%;">
-                    90%
-                </div>
-            </div>
-
-            <h5>Django</h5>
-            <div class="progress mb-4" style="height:25px;">
-                <div class="progress-bar bg-success" style="width:85%;">
-                    85%
-                </div>
-            </div>
-
-            <h5>HTML</h5>
-            <div class="progress mb-4" style="height:25px;">
-                <div class="progress-bar bg-danger" style="width:95%;">
-                    95%
-                </div>
-            </div>
-
-            <h5>CSS</h5>
-            <div class="progress mb-4" style="height:25px;">
-                <div class="progress-bar bg-info" style="width:90%;">
-                    90%
-                </div>
-            </div>
-
-        </div>
-
-        <div class="col-md-6">
-
-            <h5>Bootstrap</h5>
-            <div class="progress mb-4" style="height:25px;">
-                <div class="progress-bar bg-warning text-dark" style="width:90%;">
-                    90%
-                </div>
-            </div>
-
-            <h5>JavaScript</h5>
-            <div class="progress mb-4" style="height:25px;">
-                <div class="progress-bar bg-secondary" style="width:70%;">
-                    70%
-                </div>
-            </div>
-
-            <h5>MySQL</h5>
-            <div class="progress mb-4" style="height:25px;">
-                <div class="progress-bar bg-dark" style="width:80%;">
-                    80%
-                </div>
-            </div>
-
-            <h5>Git & GitHub</h5>
-            <div class="progress mb-4" style="height:25px;">
-                <div class="progress-bar bg-success" style="width:75%;">
-                    75%
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-    <hr class="my-5">
-
-    <div class="row text-center">
-
-        <div class="col-md-3 mb-3">
-            <div class="card shadow p-4">
-                <h2>10+</h2>
-                <p>Projects</p>
+        <!-- Python -->
+        <div class="col-md-4">
+            <div class="card skill-card text-center p-4">
+                <i class="fa-brands fa-python text-primary skill-icon"></i>
+                <h4>Python</h4>
+                <p class="text-muted">
+                    Backend development, automation and problem solving.
+                </p>
             </div>
         </div>
 
-        <div class="col-md-3 mb-3">
-            <div class="card shadow p-4">
-                <h2>1+</h2>
-                <p>Years Learning</p>
+        <!-- Django -->
+        <div class="col-md-4">
+            <div class="card skill-card text-center p-4">
+                <i class="fa-solid fa-leaf text-success skill-icon"></i>
+                <h4>Django</h4>
+                <p class="text-muted">
+                    Building secure and scalable web applications.
+                </p>
             </div>
         </div>
 
-        <div class="col-md-3 mb-3">
-            <div class="card shadow p-4">
-                <h2>8+</h2>
-                <p>Technologies</p>
+        <!-- HTML -->
+        <div class="col-md-4">
+            <div class="card skill-card text-center p-4">
+                <i class="fa-brands fa-html5 text-danger skill-icon"></i>
+                <h4>HTML5</h4>
+                <p class="text-muted">
+                    Creating clean and semantic webpage structures.
+                </p>
             </div>
         </div>
 
-        <div class="col-md-3 mb-3">
-            <div class="card shadow p-4">
-                <h2>100%</h2>
-                <p>Dedication</p>
+        <!-- CSS -->
+        <div class="col-md-4">
+            <div class="card skill-card text-center p-4">
+                <i class="fa-brands fa-css3-alt text-info skill-icon"></i>
+                <h4>CSS3</h4>
+                <p class="text-muted">
+                    Responsive layouts and modern UI design.
+                </p>
+            </div>
+        </div>
+
+        <!-- Bootstrap -->
+        <div class="col-md-4">
+            <div class="card skill-card text-center p-4">
+                <i class="fa-brands fa-bootstrap text-purple skill-icon"></i>
+                <h4>Bootstrap</h4>
+                <p class="text-muted">
+                    Fast and responsive frontend development.
+                </p>
+            </div>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="col-md-4">
+            <div class="card skill-card text-center p-4">
+                <i class="fa-brands fa-js text-warning skill-icon"></i>
+                <h4>JavaScript</h4>
+                <p class="text-muted">
+                    Interactive and dynamic web applications.
+                </p>
+            </div>
+        </div>
+
+        <!-- MySQL -->
+        <div class="col-md-4">
+            <div class="card skill-card text-center p-4">
+                <i class="fa-solid fa-database text-secondary skill-icon"></i>
+                <h4>MySQL</h4>
+                <p class="text-muted">
+                    Database design and data management.
+                </p>
+            </div>
+        </div>
+
+        <!-- GitHub -->
+        <div class="col-md-4">
+            <div class="card skill-card text-center p-4">
+                <i class="fa-brands fa-github text-dark skill-icon"></i>
+                <h4>Git & GitHub</h4>
+                <p class="text-muted">
+                    Version control and collaborative development.
+                </p>
+            </div>
+        </div>
+
+        <!-- Artificial Intelligence -->
+        <div class="col-md-4">
+            <div class="card skill-card text-center p-4">
+                <i class="fa-solid fa-robot text-success skill-icon"></i>
+                <h4>Artificial Intelligence</h4>
+                <p class="text-muted">
+                    AI concepts, intelligent systems and automation.
+                </p>
+            </div>
+        </div>
+
+        <!-- Generative AI -->
+        <div class="col-md-4">
+            <div class="card skill-card text-center p-4">
+                <i class="fa-solid fa-wand-magic-sparkles text-warning skill-icon"></i>
+                <h4>Generative AI</h4>
+                <p class="text-muted">
+                    Prompt Engineering, LLMs and AI chatbot development.
+                </p>
             </div>
         </div>
 
