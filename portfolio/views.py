@@ -3,30 +3,20 @@ from django.views import View
 from .models import Contact
 
 
+# =========================
+# SINGLE PAGE PORTFOLIO
+# =========================
+
 class Home(View):
     def get(self, request):
-        return render(request, "home.html")
+        return render(request, "index.html")
 
 
-class About(View):
-    def get(self, request):
-        return render(request, "about.html")
-
-
-class Skills(View):
-    def get(self, request):
-        return render(request, "skills.html")
-
-
-class Resume(View):
-    def get(self, request):
-        return render(request, "resume.html")
-
+# =========================
+# CONTACT FORM
+# =========================
 
 class ContactView(View):
-
-    def get(self, request):
-        return render(request, "contact.html")
 
     def post(self, request):
 
@@ -37,8 +27,12 @@ class ContactView(View):
             message=request.POST['message']
         )
 
-        return redirect('contact')
+        return redirect('/#contact')
 
+
+# =========================
+# ADMIN LOGIN
+# =========================
 
 class AdminLogin(View):
 
@@ -57,6 +51,10 @@ class AdminLogin(View):
         return render(request, "admin_login.html")
 
 
+# =========================
+# ADMIN DASHBOARD
+# =========================
+
 class Dashboard(View):
 
     def get(self, request):
@@ -69,6 +67,10 @@ class Dashboard(View):
         return render(request, "dashboard.html", {'data': data})
 
 
+# =========================
+# VIEW CONTACT
+# =========================
+
 class ViewContact(View):
 
     def get(self, request, id):
@@ -80,15 +82,26 @@ class ViewContact(View):
 
         return render(request, "view.html", {'data': data})
 
+
+# =========================
+# EDIT CONTACT
+# =========================
+
 class EditContact(View):
 
     def get(self, request, id):
+
+        if not request.session.get('admin'):
+            return redirect('admin_login')
 
         data = Contact.objects.get(id=id)
 
         return render(request, 'edit.html', {'data': data})
 
     def post(self, request, id):
+
+        if not request.session.get('admin'):
+            return redirect('admin_login')
 
         data = Contact.objects.get(id=id)
 
@@ -100,6 +113,12 @@ class EditContact(View):
         data.save()
 
         return redirect('dashboard')
+
+
+# =========================
+# DELETE CONTACT
+# =========================
+
 class DeleteContact(View):
 
     def get(self, request, id):
