@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from .models import Contact
-from django.core.mail import send_mail
 
 
 
@@ -32,23 +31,6 @@ class ContactView(View):
             email=email,
             subject=subject,
             message=message
-        )
-
-        send_mail(
-            subject=f"Portfolio Contact: {subject}",
-            message=f"""
-New message from your portfolio
-
-Name: {name}
-Email: {email}
-Subject: {subject}
-
-Message:
-{message}
-""",
-            from_email='vinaysinghh7976@gmail.com',
-            recipient_list=['vinaysinghh7976@gmail.com'],
-            fail_silently=False,
         )
 
         return redirect('/?success=1#contact')
