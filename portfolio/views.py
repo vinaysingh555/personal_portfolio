@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from .models import Contact
+from django.core.mail import send_mail
 
 
-# =========================
-# SINGLE PAGE PORTFOLIO
-# =========================
+
+
 
 class Home(View):
     def get(self, request):
@@ -16,19 +16,42 @@ class Home(View):
 # CONTACT FORM
 # =========================
 
-class ContactView(View):
 
+
+
+class ContactView(View):
     def post(self, request):
 
+        name = request.POST['name']
+        email = request.POST['email']
+        subject = request.POST['subject']
+        message = request.POST['message']
+
         Contact.objects.create(
-            name=request.POST['name'],
-            email=request.POST['email'],
-            subject=request.POST['subject'],
-            message=request.POST['message']
+            name=name,
+            email=email,
+            subject=subject,
+            message=message
         )
 
-        return redirect('/#contact')
+        send_mail(
+            subject=f"Portfolio Contact: {subject}",
+            message=f"""
+New message from your portfolio
 
+Name: {name}
+Email: {email}
+Subject: {subject}
+
+Message:
+{message}
+""",
+            from_email='vinaysinghh7976@gmail.com',
+            recipient_list=['vinaysinghh7976@gmail.com'],
+            fail_silently=False,
+        )
+
+        return redirect('/?success=1#contact')
 
 # =========================
 # ADMIN LOGIN

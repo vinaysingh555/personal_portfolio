@@ -1568,8 +1568,7 @@
                     </h3>
 
 
-                    <form method="POST">
-
+                   <form method="POST" action="{% url 'contact' %}">
                         {% csrf_token %}
 
 
@@ -1774,6 +1773,18 @@
             });
 
         });
+    const urlParams = new URLSearchParams(window.location.search);
+
+    if (urlParams.get('success') === '1') {
+        alert("Thanks for contacting me! 😊\nI will get back to you soon.");
+
+        // URL se success parameter remove karna
+        window.history.replaceState(
+            {},
+            document.title,
+            window.location.pathname + "#contact"
+        );
+    }
 
 </script>
 
